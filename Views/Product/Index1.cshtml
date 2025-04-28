@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title</h2>
+<h2>@ViewBag.Message</h2>
+@{
+    string msg1 = null;
+    if (TempData["Firstvalue"] != null)
+    {
+        msg1 = TempData["Firstvalue"].ToString();
+    }
+    <h4>@msg1</h4>
+}

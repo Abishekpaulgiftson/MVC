@@ -1,0 +1,39 @@
+﻿@model List<mvc_1.Models.Domain.tag>
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Add New Tag-Admin Functionality</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    @if(Model!=null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th> Display Name </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tag in Model)
+                {
+                    <tr>
+                        <td>@tag.id</td>
+                        <td>@tag.Name</td>
+                        <td>@tag.DisplayName</td>
+                        <td><a asp-area=""asp-controller="Admin"asp-action="Edit"asp-route-Id="@tag.id">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+       <p>No tags found !</p>
+    }   
+</div>
